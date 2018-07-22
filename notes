@@ -18,7 +18,10 @@ zokeber/docker-centos#
 #docker ps -a
 #docker images -a
 #docker image rm -f 'image id'
-docker stop name
-
+#docker stop name
+#docker inspect stormdocker_nimbus_1 | grep "IPAddress"
+docker images prune
+docker exec -it some-scylla cqlsh
+docker run --name some-scylla2 -d scylladb/scylla --seeds="$(docker inspect --format='{{ .NetworkSettings.IPAddress }}' some-scylla)"
 
 

@@ -1,5 +1,6 @@
 FROM pbhalesain/storm:1.2.2
-MAINTAINER pbhalesain
+
+LABEL maintainer="pbhalesain@gmail.com"
 
 RUN chmod 655 /usr/bin/config-supervisord.sh
 RUN /usr/bin/config-supervisord.sh nimbus 

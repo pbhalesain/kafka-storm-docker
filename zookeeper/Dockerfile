@@ -1,6 +1,6 @@
 FROM pbhalesain/base
 
-MAINTAINER pbhalesain
+LABEL maintainer="pbhalesain@gmail.com"
 
 ENV ZOOKEEPER_VERSION 3.4.12
 

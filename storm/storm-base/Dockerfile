@@ -1,6 +1,6 @@
 FROM pbhalesain/base
 
-MAINTAINER pbhalesain
+LABEL maintainer="pbhalesain@gmail.com"
 
 #move to base
 RUN yum install -y supervisor
