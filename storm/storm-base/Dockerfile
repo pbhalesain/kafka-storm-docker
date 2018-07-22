@@ -2,6 +2,9 @@ FROM pbhalesain/base
 
 MAINTAINER pbhalesain
 
+#move to base
+RUN yum install -y supervisor
+
 RUN wget -q -O - http://apache.mirrors.nublue.co.uk/storm/apache-storm-1.2.2/apache-storm-1.2.2.tar.gz | tar -xzf - -C /opt
 
 ENV STORM_HOME /opt/apache-storm-1.2.2
@@ -11,6 +14,7 @@ RUN ln -s $STORM_HOME/bin/storm /usr/bin/storm
 
 ADD storm.yaml $STORM_HOME/conf/storm.yaml
 ADD cluster.xml $STORM_HOME/logback/cluster.xml
+ADD supervisord.service /usr/lib/systemd/system/supervisord.service
 ADD config-supervisord.sh /usr/bin/config-supervisord.sh
 ADD start-supervisor.sh /usr/bin/start-supervisor.sh
 

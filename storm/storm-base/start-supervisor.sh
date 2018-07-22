@@ -10,4 +10,4 @@ echo "    tp1: dc1" >> $STORM_HOME/conf/storm.yaml
 echo "    tp2: dc2" >> $STORM_HOME/conf/storm.yaml
 echo "worker.childopts: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5%ID%" >> $STORM_HOME/conf/storm.yaml"
 
-/usr/sbin/sshd && supervisord
+/usr/sbin/sshd && systemctl start supervisord && systemctl status supervisord && systemctl enable supervisord && 
